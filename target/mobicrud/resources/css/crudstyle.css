@@ -1,0 +1,211 @@
+
+.tema_Nome_Sistema {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.5625em; /* 25px/16=1.5625em  */
+  font-weight: bold;
+  color: turquoise;
+  text-transform: uppercase;
+  text-shadow: 0.1em 0.1em 0.2em rgba(83,83,110,0.4);
+  margin-left: 40vw;
+  margin-right: auto;
+}
+
+
+
+
+.sub_titulo {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.4375em; /* 23px/16=1.5625em  */
+  font-weight: bold;
+  color: darkblue;
+  text-transform: uppercase;
+  text-shadow: 0.1em 0.1em 0.2em rgba(83,83,110,0.4);
+  margin-left: 40vw;
+  margin-right: auto;
+}
+
+
+.texto_inicial {
+    color: black;
+    font-weight: bold;
+    margin-left: 10vw;
+    margin-right: auto;
+}
+
+
+
+.tabelaCadastro {
+  /*margin-left:auto;*/ 
+  /*margin-right:auto;*/
+  /*border-radius: 5px;*/
+  border: none;
+  padding: 0px;
+}
+
+
+.colunaRotulo_tabelaCadastro {
+  width: 10vw;
+}
+
+.colunaInput_tabelaCadastro {
+  width: 20vw;
+}
+
+.colunaInput02_tabelaCadastro {
+  width: 10vw;
+}
+
+.colunaMsg_tabelaCadastro {
+  width: 10vw;
+}
+
+
+
+.mensagem_Cadastro {
+  margin-left: 200px;
+  margin-right: auto;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.5625em; /* 25px/16=1.5625em  */
+  font-weight: bold;
+  color: black;
+}
+
+
+
+.mensagem_Error {
+  color: red; 
+  font-family: 'New Century Schoolbook', serif; 
+  font-size: 0.875em; /* 14px/16=0.875em */
+  font-style: italic;
+}
+
+
+
+.caixa_Texto {
+  width: 100%;
+  padding: 10px 10px;
+  margin: 8px 0;
+  display: inline-block;
+  font-size: 1.0em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+  outline: none;
+}
+
+.caixa_Texto_DDD {
+  width: 30%;
+  padding: 10px 10px;
+  margin: 8px 0;
+  display: inline-block;
+  font-size: 1.0em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+  outline: none;
+}
+
+
+.caixa_Texto:focus {
+    border: 1px solid #555;
+}
+
+.caixa_Texto_DDD:focus {
+    border: 1px solid #555;
+}
+
+
+
+.butoes {
+  width: 95%;
+  font-weight: bold;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;  
+}
+
+
+.butoes_Remover {
+  width: 95%;
+  font-weight: bold;
+  background-color: #c61c13;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;  
+}
+
+
+
+
+.butoes:hover, .butoes_Principal:hover {
+  background-color: #45a049;
+}
+
+
+.butoes_Remover:hover {
+  background-color: #961e18;
+}
+
+
+.rotulosComponentes {
+    color: black;
+    font-weight: bold;
+}
+
+
+#caixaDialogo {
+    display: none;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#caixaDialogoConteudo {
+    width: 380px;
+    height: 80px;
+    padding: 12px 0;
+    border-radius: 30px;
+    background-color: #4CAF50;
+}
+
+#mensagem {
+  color: white;
+}
+
+
+
+
+#btnFechar {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#btnFechar:hover {
+    color: black;
+}
+
+
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-22 { font-size: 22px; }
+.material-icons.md-24 { font-size: 24px; } 
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }

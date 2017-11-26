@@ -1,0 +1,186 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no"/>
+        <h:outputStylesheet name="/css/bootstrap.min.css"/>
+        <h:outputStylesheet name="/css/bootstrap-theme.css"/>
+        <h:outputStylesheet name="/css/elegant-icons-style.css"/>
+        <h:outputStylesheet name="/css/font-awesome.min.css"/>
+        <h:outputStylesheet name="/css/style.css"/>
+        <h:outputStylesheet name="/css/style-responsive.css"/>
+        <h:outputStylesheet name="/css/crudstyle.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+        <title>MobiCRUD - Sistema CRUD</title>        
+    </h:head>
+    <h:body>
+
+
+        <!-- container section start -->
+        <section id="container" class="">
+
+
+            <header class="header dark-bg">
+
+                <div class="toggle-nav">
+                    <div class="icon-reorder tooltips" data-original-title="Ocultar Menu" data-placement="bottom"><i class="icon_menu"></i></div>
+                </div>
+
+
+                <h:panelGrid columns="2">
+                    <h:panelGroup layout="block"><h:graphicImage height="50" value="#{resource['images:logo.png']}"/></h:panelGroup>
+                    <h:panelGroup layout="block"><h:outputText value="MobiCRUD" styleClass="tema_Nome_Sistema"/></h:panelGroup>
+                </h:panelGrid>
+
+            </header>  
+
+
+
+
+
+            <!--MENU-->
+            <aside>
+                <div id="sidebar"  class="nav-collapse ">
+
+                    <!-- Início da lista-->
+                    <ul class="sidebar-menu">  
+                        <h:form>
+
+                            <li class="active">
+                                <h:commandLink action="index.xhtml">
+                                    <i class="icon_house_alt"></i>
+                                    <span>INICIO</span>
+                                </h:commandLink>
+                            </li>
+
+                            <li class="sub-menu">
+                                <a href="javascript:;" class="">
+                                    <i class="icon_desktop"></i>
+                                    <span>Operações</span>
+                                    <span class="menu-arrow arrow_carrot-right"></span>
+                                </a>
+                                <ul class="sub">
+                                    <li><h:commandLink id="menu_Adicionar" value="Adicionar" action="adicionar.xhtml" actionListener="#{cliente.realizaOperacao}"/></li>
+                                    <li><h:commandLink id="menu_Buscar" value="Buscar" action="buscar.xhtml" actionListener="#{cliente.realizaOperacao}"/></li>
+                                    <li><h:commandLink id="menu_Editar" value="Editar" action="editar.xhtml" actionListener="#{cliente.realizaOperacao}"/></li>
+                                    <li><h:commandLink id="menu_Remover" value="Remover" action="remover.xhtml" actionListener="#{cliente.realizaOperacao}"/></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="" href="https://mobiscd.herokuapp.com">
+                                    <i class="material-icons md-22">power_settings_new</i>
+                                    <span>MobiSCD</span>
+                                </a>
+                            </li>
+
+
+                        </h:form>
+                    </ul>
+                    <!-- fim da lista-->
+
+                </div>
+            </aside>
+            <!--FIM MENU-->
+
+
+            <!-- CONTEUDO PRINCIPAL -->
+            <section id="main-content">
+
+                <section class="wrapper">            
+
+                    <h:form>
+
+                        <h:panelGrid columns="4" frame="box" columnClasses="colunaRotulo_tabelaCadastro, colunaInput_tabelaCadastro, colunaInput02_tabelaCadastro, colunaMsg_tabelaCadastro" styleClass="tabelaCadastro">
+
+                            <f:facet name="header">
+                                <h:panelGroup>
+                                    <h:outputText value="Busca de informação de usuário" styleClass="mensagem_Cadastro"/>
+                                </h:panelGroup>
+                            </f:facet>
+
+
+                            <h:panelGroup layout="block"> <h:outputLabel for="cadastro_Email" value="E-Mail:" styleClass="rotulosComponentes"/> </h:panelGroup>
+                            <h:panelGroup layout="block"> 
+                                <h:selectOneMenu id="cadastro_Email" value="#{cliente.email}" styleClass="caixa_Texto" valueChangeListener="#{cliente.processarItemSelecionado}">
+                                    <f:selectItems value="#{cliente.lista_Usuarios}"/>
+                                    <f:ajax event="change" render="@form"/>
+                                </h:selectOneMenu>
+                            </h:panelGroup>
+                            <h:panelGroup> </h:panelGroup>
+                            <h:panelGroup layout="block"> <h:message for="cadastro_Email" styleClass="mensagem_Error"/> </h:panelGroup>
+
+
+
+                            <h:panelGroup layout="block"> <h:outputLabel for="cadastro_Nome" value="Nome:"/> </h:panelGroup>
+                            <h:panelGroup layout="block"> <h:inputText id="cadastro_Nome" styleClass="caixa_Texto" size="40" maxlength="50" value="#{cliente.nome}" disabled="true"/> </h:panelGroup>
+                            <h:panelGroup> </h:panelGroup>
+                            <h:panelGroup layout="block"> <h:message for="cadastro_Nome" styleClass="mensagem_Error"/> </h:panelGroup>
+
+
+                            <h:panelGroup layout="block"> <h:outputLabel for="cadastro_Estado" value="Estado:"/> </h:panelGroup>
+                            <h:panelGroup layout="block"> 
+                                <h:selectOneMenu id="cadastro_Estado" value="#{cliente.estado}" styleClass="caixa_Texto" disabled="true">
+                                    <f:selectItem itemValue="#{cliente.estado}"/>
+                                </h:selectOneMenu>
+                            </h:panelGroup>
+                            <h:panelGroup> </h:panelGroup>
+                            <h:panelGroup layout="block"> <h:message for="cadastro_Estado" styleClass="mensagem_Error"/> </h:panelGroup>
+
+
+                            <h:panelGroup layout="block"> <h:outputLabel for="cadastro_Cidade" value="Cidade:"/> </h:panelGroup>
+                            <h:panelGroup layout="block"> <h:inputText id="cadastro_Cidade" styleClass="caixa_Texto" size="40" maxlength="40" value="#{cliente.cidade}" disabled="true"/> </h:panelGroup>
+                            <h:panelGroup> </h:panelGroup>
+                            <h:panelGroup layout="block"> <h:message for="cadastro_Cidade" styleClass="mensagem_Error"/> </h:panelGroup>
+
+
+                            <h:panelGroup layout="block"> <h:outputLabel for="cadastro_Endereco" value="Endereço:"/> </h:panelGroup>
+                            <h:panelGroup layout="block"> <h:inputText id="cadastro_Endereco" styleClass="caixa_Texto" size="40" maxlength="50" value="#{cliente.endereco}" disabled="true"/> </h:panelGroup>
+                            <h:panelGroup> </h:panelGroup>
+                            <h:panelGroup layout="block"> <h:message for="cadastro_Endereco" styleClass="mensagem_Error"/> </h:panelGroup>
+
+
+                            <h:panelGroup layout="block"> <h:outputLabel for="cadastro_DDD" value="DDD:"/>   </h:panelGroup>
+                            <h:panelGroup layout="block"> <h:inputText id="cadastro_DDD" styleClass="caixa_Texto_DDD" size="3" maxlength="2" value="#{cliente.tel_DDD}" disabled="true"/> <h:outputText value="&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"/>  <h:outputLabel for="cadastro_Telefone" value="Telefone:"/> </h:panelGroup>
+                            <h:panelGroup layout="block"> <h:inputText id="cadastro_Telefone" styleClass="caixa_Texto" size="12" maxlength="10" value="#{cliente.telefone}" disabled="true"/> </h:panelGroup>
+                            <h:panelGroup layout="block"> <h:message for="cadastro_Telefone" styleClass="mensagem_Error"/> </h:panelGroup>
+
+
+                            <h:panelGroup layout="block"> <h:outputLabel for="cadastro_Senha" value="Senha:"/> </h:panelGroup>
+                            <h:panelGroup layout="block"> <h:inputText id="cadastro_Senha" styleClass="caixa_Texto" size="20" maxlength="10" value="#{cliente.senha}" validator="#{cliente.validar}" disabled="true"/> </h:panelGroup>
+                            <h:panelGroup> </h:panelGroup>
+                            <h:panelGroup layout="block"> <h:message for="cadastro_Senha" styleClass="mensagem_Error"/> </h:panelGroup>
+
+
+                            <h:panelGroup> </h:panelGroup>
+                            <h:panelGroup> <h:message for="cadastro_Email" styleClass="mensagem_Error"/> </h:panelGroup>
+                            <h:panelGroup> </h:panelGroup>
+                            <h:panelGroup> </h:panelGroup>
+
+                        </h:panelGrid>
+
+                    </h:form>
+
+                </section>
+            </section>
+            <!-- FIM CONTEUDO PRINCIPAL -->
+
+
+
+        </section>
+        <!-- container section start -->
+
+        <h:outputScript name="/js/jquery.js"/>
+        <h:outputScript name="/js/jquery-1.8.3.min.js"/>
+        <h:outputScript name="/js/jquery-ui-1.9.2.custom.min.js"/>
+        <h:outputScript name="/js/bootstrap.min.js"/>
+        <h:outputScript name="/js/jquery.scrollTo.min.js"/>
+        <h:outputScript name="/js/jquery.nicescroll.js"/>
+        <h:outputScript name="/js/scripts.js"/>
+        <h:outputScript name="/js/ajaxCRUD.js"/>
+
+    </h:body> 
+</html>

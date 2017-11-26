@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-740-. --><xs:schema xmlns:tns="http://WS.mobiSCD/" xmlns:ns1="http://jaxb.dev.java.net/array" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://WS.mobiSCD/">
+
+<xs:import namespace="http://jaxb.dev.java.net/array" schemaLocation="https://mobiscd.herokuapp.com/CRUDImpl?xsd=1" />
+
+<xs:element name="adicionaUsuarios" type="tns:adicionaUsuarios" />
+
+<xs:element name="adicionaUsuariosResponse" type="tns:adicionaUsuariosResponse" />
+
+<xs:element name="buscaUsuarios" type="tns:buscaUsuarios" />
+
+<xs:element name="buscaUsuariosResponse" type="tns:buscaUsuariosResponse" />
+
+<xs:element name="editaUsuarios" type="tns:editaUsuarios" />
+
+<xs:element name="editaUsuariosResponse" type="tns:editaUsuariosResponse" />
+
+<xs:element name="removeUsuarios" type="tns:removeUsuarios" />
+
+<xs:element name="removeUsuariosResponse" type="tns:removeUsuariosResponse" />
+
+<xs:complexType name="editaUsuarios">
+<xs:sequence>
+<xs:element name="id" type="xs:string" minOccurs="0" />
+<xs:element name="nome" type="xs:string" minOccurs="0" />
+<xs:element name="estado" type="xs:string" minOccurs="0" />
+<xs:element name="cidade" type="xs:string" minOccurs="0" />
+<xs:element name="endereco" type="xs:string" minOccurs="0" />
+<xs:element name="DDD" type="xs:string" minOccurs="0" />
+<xs:element name="tel" type="xs:string" minOccurs="0" />
+<xs:element name="senha" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="editaUsuariosResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="removeUsuarios">
+<xs:sequence>
+<xs:element name="id" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="removeUsuariosResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="adicionaUsuarios">
+<xs:sequence>
+<xs:element name="id" type="xs:string" minOccurs="0" />
+<xs:element name="nome" type="xs:string" minOccurs="0" />
+<xs:element name="estado" type="xs:string" minOccurs="0" />
+<xs:element name="cidade" type="xs:string" minOccurs="0" />
+<xs:element name="endereco" type="xs:string" minOccurs="0" />
+<xs:element name="DDD" type="xs:string" minOccurs="0" />
+<xs:element name="tel" type="xs:string" minOccurs="0" />
+<xs:element name="senha" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="adicionaUsuariosResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscaUsuarios">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="buscaUsuariosResponse">
+<xs:sequence>
+<xs:element name="return" type="ns1:stringArray" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

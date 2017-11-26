@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="https://mobiscd.herokuapp.com/CRUDImpl?wsdl" uri="wsdl/localhost_8084/MobiSCD/CRUDImpl.wsdl"/>
+    <system systemId="https://mobiscd.herokuapp.com/CRUDImpl?xsd=1" uri="wsdl/localhost_8084/MobiSCD/CRUDImpl.xsd_1.xsd"/>
+    <system systemId="https://mobiscd.herokuapp.com/CRUDImpl?xsd=2" uri="wsdl/localhost_8084/MobiSCD/CRUDImpl.xsd_2.xsd"/>
+</catalog>
